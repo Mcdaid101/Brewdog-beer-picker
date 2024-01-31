@@ -1,9 +1,11 @@
 import express from "express";
 import axios from "axios";
+import bodyParser from "body-parser";
 
 const app = express();
 const port = 3000;
 
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 
@@ -17,6 +19,22 @@ app.get("/", async (req, res) => {
     } catch (error) {
       console.error(error);
       res.status(500);
+    }
+  });
+
+
+ app.post("/", async (req, res) => {
+    try {
+      console.log(req.body);
+      const year = req.body.year;
+      const response = await axios.get(
+        `https://api.punkapi.com/v2/beers?brewed_before=12-${year}&brewed_after=01-${year}`
+      );
+      const result = response.data;
+      console.log(result);
+      res.render("index.ejs", {result});
+    } catch (error) {
+      console.error("Failed to make request:", error.message);
     }
   });
 
