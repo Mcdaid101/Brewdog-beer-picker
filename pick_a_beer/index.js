@@ -10,7 +10,7 @@ app.get("/", async (req, res) => {
       const result = await axios.get('https://api.punkapi.com/v2/beers/random');
       console.log(result);
       res.render("index.ejs", {
-        
+        name: result.data[0]
       });
     } catch (error) {
       console.error(error);
