@@ -22,7 +22,7 @@ app.get("/", async (req, res) => {
     }
   });
 
-
+// displays what brew dogs were brewed in a certain year chosen by the user 
  app.post("/", async (req, res) => {
     try {
       console.log(req.body);
@@ -32,7 +32,7 @@ app.get("/", async (req, res) => {
       );
       const result = response.data;
       console.log(result);
-      res.render("index.ejs", {result});
+      res.render("index.ejs", {beers: result});
     } catch (error) {
       console.error("Failed to make request:", error.message);
     }

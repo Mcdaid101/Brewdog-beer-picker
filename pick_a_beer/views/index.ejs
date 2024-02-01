@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pick a Beer</title>
-    <link href="styles/styles.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.6.1/dist/full.min.css" rel="stylesheet" type="text/css" />
-</head>
-<body>
+<%- include("partials/header.ejs") %>
     <div class="navbar bg-base-100">
         <div class="navbar-start">
         </div>
@@ -17,7 +8,7 @@
         <div class="navbar-end">
         </div>
       </div>
-      
+      <!--year search for beers-->
       <form action="/" id="form" class="form" method="POST">
         <select name="year" class="form-select overflow-auto">
           <option value="" data-display="Select">Year</option>
@@ -42,15 +33,13 @@
         <button type="submit" class="form-submit">Go</button>
       </form>
       <div>
-        <% if (result && result.length > 0) { %>
-            <% result.forEach(beer => { %>
+        <% if (beers && beers.length > 0) { %>
+            <% beers.forEach(beer => { %>
                 <h1><%= beer.name %></h1>
-                <!-- Display other beer information as needed -->
             <% }); %>
         <% } else { %>
-            <p>No beers selected yet</p>
+            <p>Sorry we can't find any beers first brewed in this year</p>
         <% } %>
     </div>
-      <script src="https://cdn.tailwindcss.com"></script>
-</body>
-</html>
+
+    <%- include("partials/footer.ejs") %>
