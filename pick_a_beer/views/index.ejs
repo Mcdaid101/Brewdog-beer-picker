@@ -23,14 +23,9 @@
         </select>
         <button type="submit" class="form-submit">Go</button>
       </form>
-      <div>
-        <% if (beers && beers.length > 0) { %>
-            <% beers.forEach(beer => { %>
-                <h1><%= beer.name %></h1>
-            <% }); %>
-        <% } else { %>
-            <p>Sorry we can't find any beers first brewed in this year</p>
-        <% } %>
-    </div>
+
+      <a href="/random">Random Beer</a>
+
+
 
     <%- include("partials/footer.ejs") %>

@@ -1,0 +1,8 @@
+<%- include("partials/header.ejs") %>
+<h1>Random Beer</h1>
+<% beers.forEach(beer => { %>
+<div>
+  <%= beer.name %>
+</div>
+<% }); %>
+<%- include("partials/footer.ejs") %>

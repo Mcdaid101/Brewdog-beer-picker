@@ -8,19 +8,24 @@ const port = 3000;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
+// renders home page
+app.get("/", (req, res) => {
+  res.render("index.ejs");
+});
 
-app.get("/", async (req, res) => {
+// render a random beer 
+app.get("/random", async (req, res) => {
   try {
     const result = await axios.get('https://api.punkapi.com/v2/beers/random');
     console.log(result);
-    res.render("index.ejs", { beers: [result.data[0]] });
+    res.render("random.ejs", { beers: [result.data[0]] });
   } catch (error) {
     console.error(error);
     res.status(500).send("Internal Server Error");
   }
 });
 
-
+// search for a beer by year 
 app.post("/", async (req, res) => {
   try {
     console.log(req.body);
