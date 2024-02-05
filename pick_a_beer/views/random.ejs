@@ -2,7 +2,19 @@
 <h1>Random Beer</h1>
 <% beers.forEach(beer => { %>
 <div>
-  <%= beer.name %>
+  <p><%= beer.name %></p>
+</div>
+<div>
+  <p class="italic"><%= beer.tagline %></p>
+</div>
+<div>
+  <p>First Brewed: <%= beer.first_brewed %></p>
+</div>
+<div>
+  <p><%= beer.description %></p>
+</div>
+<div class="w-20 h-20">
+  <img src="<%= beer.image_url %>" alt="<%= beer.name %> image">
 </div>
 <% }); %>
 <%- include("partials/footer.ejs") %>
