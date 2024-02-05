@@ -1,0 +1,12 @@
+<%- include("partials/header.ejs") %>
+<h1>Beer Years</h1>
+<div>
+    <% if (beers && beers.length > 0) { %>
+        <% beers.forEach(beer => { %>
+            <h1><%= beer.name %></h1>
+        <% }); %>
+    <% } else { %>
+        <p>Sorry we can't find any beers first brewed in this year</p>
+    <% } %>
+</div>
+<%- include("partials/footer.ejs") %>
