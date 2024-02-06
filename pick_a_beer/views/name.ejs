@@ -1,0 +1,27 @@
+<%- include("partials/header.ejs") %>
+
+<h1>Beer Searched by name </h1>
+<% if (beerName) { %>
+<% beerName.forEach(beer => { %>
+
+  <p><%= beer.name %></p>
+
+  <p class="italic"><%= beer.tagline %></p>
+
+  <p>First Brewed: <%= beer.first_brewed %></p>
+
+  <p><%= beer.description %></p>
+
+<div class="h-20 w-20">
+  <img src="<%= beer.image_url %>" alt="<%= beer.name %> image">
+</div>
+
+<p>Food pairings: <%= beer.food_pairing %></p>
+
+<p>Brewers Tips: <%= beer.brewers_tips %></p>
+
+<% }); %>
+<% } else { %>
+<p>Failed to find the beer name you searched for</p>
+<% } %>
+<%- include("partials/footer.ejs") %>
