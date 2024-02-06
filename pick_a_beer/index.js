@@ -26,7 +26,7 @@ app.get("/random", async (req, res) => {
 });
 
 // search for a beer by year 
-app.post("/", async (req, res) => {
+app.post("/search-by-year", async (req, res) => {
   try {
     console.log(req.body);
     const year = req.body.year;
@@ -43,21 +43,23 @@ app.post("/", async (req, res) => {
 });
 
 // search for a beer by food pairings 
-app.post("/food", async (req, res) => {
+app.post("/search-by-food", async (req, res) => {
   try {
     console.log(req.body);
-    const food = req.body.food;
+    const food = req.body.search;
     const response = await axios.get(
-      `https://api.punkapi.com/v2/beers?food=${food}`
+      `https://api.punkapi.com/v2/beers?food=${food}&per_page=80`
     );
     const matchingFoods = response.data;
     console.log(matchingFoods);
-    res.render("food.ejs", {foods: matchingFoods});
+    res.render("food.ejs", { foods: matchingFoods });
   } catch (error) {
     console.error("Failed to make request:", error.message);
     res.status(500).send("Internal Server Error");
   }
 });
+
+
 
 app.listen(port, () => {
   console.log(`Server running on port: ${port}`);

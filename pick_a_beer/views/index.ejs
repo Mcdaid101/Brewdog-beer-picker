@@ -3,7 +3,7 @@
 
   <!--year search for beers-->
   <div class="lg:w-[50%] sm:w-[80%] md:w-[70%] bg-blue-500">
-      <form action="/" id="form" class="form" method="POST">
+    <form action="/search-by-year" id="year-form" class="form" method="POST">
         <select name="year" class="form-select overflow-auto">
           <option value="" data-display="Select">Year</option>
           <option value="2008">2008</option>
@@ -36,7 +36,7 @@
 
       <!-- Search for food pairing -->
       <div class="lg:w-[50%] sm:w-[80%] md:w-[70%] border-solid bg-yellow-600 mt-8">
-        <form action="/food">
+        <form action="/search-by-food" id="food-form" method="POST">
           <input type="text" placeholder="Search Food Pairings" name="search" value="" class="input input-bordered w-full max-w-xs">
           <button type="submit">Search</button>
       </form>
