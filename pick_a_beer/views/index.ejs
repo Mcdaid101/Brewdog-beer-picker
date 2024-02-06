@@ -42,6 +42,14 @@
       </form>
       </div>
 
+       <!-- Search for beer by name -->
+       <div class="lg:w-[50%] sm:w-[80%] md:w-[70%] border-solid bg-yellow-600 mt-8">
+        <form action="/search-by-name" id="name" method="POST">
+          <input type="text" placeholder="Search beers by name" name="search" value="" class="input input-bordered w-full max-w-xs">
+          <button type="submit">Search</button>
+      </form>
+      </div>
+
   </div>
 </div>
 <%- include("partials/footer.ejs") %>

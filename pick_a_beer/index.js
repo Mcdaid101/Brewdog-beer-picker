@@ -69,7 +69,7 @@ app.post("/search-by-name", async (req, res) => {
     );
     const nameMatch = response.data;
     console.log(nameMatch);
-    res.render("food.ejs", { beerName: nameMatch });
+    res.render("name.ejs", { beerName: nameMatch });
   } catch (error) {
     console.error("Failed to make request:", error.message);
     res.status(500).send("Internal Server Error");
