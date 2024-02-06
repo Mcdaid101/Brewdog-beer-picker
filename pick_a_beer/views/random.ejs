@@ -1,20 +1,27 @@
 <%- include("partials/header.ejs") %>
+
 <h1>Random Beer</h1>
+<% if (beers) { %>
 <% beers.forEach(beer => { %>
-<div>
+
   <p><%= beer.name %></p>
-</div>
-<div>
+
   <p class="italic"><%= beer.tagline %></p>
-</div>
-<div>
+
   <p>First Brewed: <%= beer.first_brewed %></p>
-</div>
-<div>
+
   <p><%= beer.description %></p>
-</div>
-<div class="w-20 h-20">
+
+<div class="h-20 w-20">
   <img src="<%= beer.image_url %>" alt="<%= beer.name %> image">
 </div>
+
+<p>Food pairings: <%= beer.food_pairing %></p>
+
+<p>Brewers Tips: <%= beer.brewers_tips %></p>
+
 <% }); %>
+<% } else { %>
+<p>Failed to load a random beer</p>
+<% } %>
 <%- include("partials/footer.ejs") %>

@@ -1,12 +1,27 @@
 <%- include("partials/header.ejs") %>
-<h1>Beer Years</h1>
+<h1>Beers by Years</h1>
 <div>
     <% if (beers && beers.length > 0) { %>
         <% beers.forEach(beer => { %>
-            <h1><%= beer.name %></h1>
+            <p><%= beer.name %></p>
+
+            <p class="italic"><%= beer.tagline %></p>
+
+            <p>First Brewed: <%= beer.first_brewed %></p>
+
+            <p><%= beer.description %></p>
+
+            <div class="h-20 w-20">
+                <img src="<%= beer.image_url %>" alt="<%= beer.name %> image">
+            </div>
+
+            <p>Food pairings: <%= beer.food_pairing %></p>
+
+            <p>Brewers Tips: <%= beer.brewers_tips %></p>
+
         <% }); %>
     <% } else { %>
-        <p>Sorry we can't find any beers first brewed in this year</p>
-    <% } %>
+            <p>Sorry we can't find any beers first brewed in this year</p>
+        <% } %>
 </div>
 <%- include("partials/footer.ejs") %>
