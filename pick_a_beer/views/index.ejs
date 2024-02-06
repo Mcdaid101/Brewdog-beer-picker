@@ -15,9 +15,24 @@
 <div id="mousse_interieur_4"></div>
 
 <div class="flex justify-center items-center w-full mt-8">
+  <div class="lg:w-[50%] sm:w-[80%] md:w-[70%] bg-blue-500">
+  <!-- Search for beer by name -->
+  <div class="lg:w-[50%] sm:w-[80%] md:w-[70%] border-solid bg-yellow-600 mt-8">
+    <form action="/search-by-name" id="name" method="POST">
+      <input type="text" placeholder="Search beers by name" name="search" value="" class="input input-bordered w-full max-w-xs">
+      <button type="submit">Search</button>
+  </form>
+  </div>
+
+  <!-- Search for food pairing -->
+  <div class="lg:w-[50%] sm:w-[80%] md:w-[70%] border-solid bg-yellow-600 mt-8">
+    <form action="/search-by-food" id="food-form" method="POST">
+      <input type="text" placeholder="Search Food Pairings" name="search" value="" class="input input-bordered w-full max-w-xs">
+      <button type="submit">Search</button>
+    </form>
+  </div>
 
   <!--year search for beers-->
-  <div class="lg:w-[50%] sm:w-[80%] md:w-[70%] bg-blue-500">
     <form action="/search-by-year" id="year-form" class="form" method="POST">
         <select name="year" class="form-select overflow-auto">
           <option value="" data-display="Select">Year</option>
@@ -48,22 +63,6 @@
             <a href="/random">Random Beer</a>
           </button>
         </div>
-
-      <!-- Search for food pairing -->
-      <div class="lg:w-[50%] sm:w-[80%] md:w-[70%] border-solid bg-yellow-600 mt-8">
-        <form action="/search-by-food" id="food-form" method="POST">
-          <input type="text" placeholder="Search Food Pairings" name="search" value="" class="input input-bordered w-full max-w-xs">
-          <button type="submit">Search</button>
-      </form>
-      </div>
-
-       <!-- Search for beer by name -->
-       <div class="lg:w-[50%] sm:w-[80%] md:w-[70%] border-solid bg-yellow-600 mt-8">
-        <form action="/search-by-name" id="name" method="POST">
-          <input type="text" placeholder="Search beers by name" name="search" value="" class="input input-bordered w-full max-w-xs">
-          <button type="submit">Search</button>
-      </form>
-      </div>
 
   </div>
 </div>
