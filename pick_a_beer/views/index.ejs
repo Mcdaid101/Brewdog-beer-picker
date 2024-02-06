@@ -1,5 +1,8 @@
 <%- include("partials/header.ejs") %>
-      <!--year search for beers-->
+<div class="flex justify-center items-center w-full mt-8">
+
+  <!--year search for beers-->
+  <div class="lg:w-[50%] sm:w-[80%] md:w-[70%] bg-blue-500">
       <form action="/" id="form" class="form" method="POST">
         <select name="year" class="form-select overflow-auto">
           <option value="" data-display="Select">Year</option>
@@ -24,8 +27,11 @@
         <button type="submit" class="form-submit">Go</button>
       </form>
 
-      <a href="/random">Random Beer</a>
+      <!--Random beer button -->
+        <div class="lg:w-[50%] sm:w-[80%] md:w-[70%] border-solid bg-red-600 mt-8">
+          <a href="/random">Random Beer</a>
+        </div>
 
-
-
+  </div>
+</div>
     <%- include("partials/footer.ejs") %>

@@ -42,6 +42,15 @@ app.post("/", async (req, res) => {
   }
 });
 
+// search for a beer by food pairings 
+app.post("/food", async (req, res) => {
+  try {
+
+  } catch (error) {
+
+  }
+});
+
 app.listen(port, () => {
   console.log(`Server running on port: ${port}`);
 });
