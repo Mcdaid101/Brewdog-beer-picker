@@ -59,7 +59,22 @@ app.post("/search-by-food", async (req, res) => {
   }
 });
 
-
+// search for a beer by name
+app.post("/search-by-name", async (req, res) => {
+  try {
+    console.log(req.body);
+    const name = req.body.search;
+    const response = await axios.get(
+      `https://api.punkapi.com/v2/beers?beer_name=${name}&per_page=80`
+    );
+    const nameMatch = response.data;
+    console.log(nameMatch);
+    res.render("food.ejs", { beerName: nameMatch });
+  } catch (error) {
+    console.error("Failed to make request:", error.message);
+    res.status(500).send("Internal Server Error");
+  }
+});
 
 app.listen(port, () => {
   console.log(`Server running on port: ${port}`);
