@@ -24,14 +24,24 @@
           <option value="2023">2023</option>
           <option value="2024">2024</option>
         </select>
-        <button type="submit" class="form-submit">Go</button>
+        <button type="submit">Search</button>
       </form>
 
       <!--Random beer button -->
-        <div class="lg:w-[50%] sm:w-[80%] md:w-[70%] border-solid bg-red-600 mt-8">
-          <a href="/random">Random Beer</a>
+        <div class="lg:w-[50%] sm:w-[80%] md:w-[70%] border-solid mt-10">
+          <button class="btn btn-outline">
+            <a href="/random">Random Beer</a>
+          </button>
         </div>
+
+      <!-- Search for food pairing -->
+      <div class="lg:w-[50%] sm:w-[80%] md:w-[70%] border-solid bg-yellow-600 mt-8">
+        <form action="/food">
+          <input type="text" placeholder="Search Food Pairings" name="search" value="" class="input input-bordered w-full max-w-xs">
+          <button type="submit">Search</button>
+      </form>
+      </div>
 
   </div>
 </div>
-    <%- include("partials/footer.ejs") %>
+<%- include("partials/footer.ejs") %>

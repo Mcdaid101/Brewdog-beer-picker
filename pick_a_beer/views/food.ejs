@@ -1,5 +1,27 @@
 <%- include("partials/header.ejs") %>
-
 <h1>Food Pairings</h1>
+<div>
+    <% if (foods && foods.length > 0) { %>
+        <% foods.forEach(food => { %>
+            <p><%= food.name %></p>
 
+            <p class="italic"><%= food.tagline %></p>
+
+            <p>First Brewed: <%= food.first_brewed %></p>
+
+            <p><%= food.description %></p>
+
+            <div class="h-20 w-20">
+                <img src="<%= food.image_url %>" alt="<%= food.name %> image">
+            </div>
+
+            <p>Food pairings: <%= food.food_pairing %></p>
+
+            <p>Brewers Tips: <%= food.brewers_tips %></p>
+
+        <% }); %>
+    <% } else { %>
+            <p>Sorry we can't find any beers that go well with the food you searched for.</p>
+        <% } %>
+</div>
 <%- include("partials/footer.ejs") %>

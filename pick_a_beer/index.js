@@ -31,7 +31,7 @@ app.post("/", async (req, res) => {
     console.log(req.body);
     const year = req.body.year;
     const response = await axios.get(
-      `https://api.punkapi.com/v2/beers?brewed_before=12-${year}&brewed_after=01-${year}`
+      `https://api.punkapi.com/v2/beers?brewed_before=12-${year}&brewed_after=01-${year}&per_page=80`
     );
     const beerYears = response.data;
     console.log(beerYears);
@@ -45,9 +45,17 @@ app.post("/", async (req, res) => {
 // search for a beer by food pairings 
 app.post("/food", async (req, res) => {
   try {
-
+    console.log(req.body);
+    const food = req.body.food;
+    const response = await axios.get(
+      `https://api.punkapi.com/v2/beers?food=${food}`
+    );
+    const matchingFoods = response.data;
+    console.log(matchingFoods);
+    res.render("food.ejs", {foods: matchingFoods});
   } catch (error) {
-
+    console.error("Failed to make request:", error.message);
+    res.status(500).send("Internal Server Error");
   }
 });
 
