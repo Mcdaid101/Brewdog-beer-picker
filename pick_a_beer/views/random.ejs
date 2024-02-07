@@ -6,7 +6,7 @@
 <% beers.forEach(beer => { %>
 <div class="lg:w-[50%] sm:w-[80%] md:w-[70%] border-solid mt-8 relative z-0">
 <div class="card md:card-side bg-base-100 shadow-xl">
-  <figure><img src="<%= beer.image_url %>" alt="<%= beer.name %> image"/></figure>
+  <figure><img id="figure-images" class="sm:h-[50%] sm:w-[50%]" src="<%= beer.image_url %>" alt="<%= beer.name %> image"/></figure>
   <div class="card-body">
     <h2 class="card-title text-3xl" id="titles"><%= beer.name %></h2>
     <p class="italic"><%= beer.tagline %></p>

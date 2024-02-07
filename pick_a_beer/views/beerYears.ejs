@@ -1,24 +1,24 @@
 <%- include("partials/header.ejs") %>
 
-<h1 class="text-center text-2xl mt-8" id="titles">Beers by Year <%= year %> <i class="fa-solid fa-beer-mug-empty text-gold"></i></h1>
 <div class="flex justify-center items-center mt-8 flex-col relative">
-<% if (beers) { %>
-<% beers.forEach(beer => { %>
-<div class="lg:w-[50%] sm:w-[80%] md:w-[70%] border-solid mt-8 relative">
-<div class="card md:card-side bg-base-100 shadow-xl">
-  <figure><img src="<%= beer.image_url %>" alt="<%= beer.name %> image"/></figure>
-  <div class="card-body">
-    <h2 class="card-title text-3xl" id="titles"><%= beer.name %></h2>
-    <p class="italic"><%= beer.tagline %></p>
-    <p><span class="text-xl" id="titles">First Brewed:</span> <%= beer.first_brewed %></p>
-    <p><%= beer.description %></p>
-    <p><span class="text-xl" id="titles">Food pairings: </span><%= beer.food_pairing %></p>
-    <p><span class="text-xl" id="titles">Brewers Tips: </span><%= beer.brewers_tips %></p>
+  <% if (beers) { %>
+      <h1 id="titles" class="text-2xl">Beer from the year <%= year %></h1>
+      <% beers.forEach(beer => { %>
+        <div class="lg:w-[50%] sm:w-[80%] md:w-[70%] border-solid mt-8 relative z-0">
+        <div class="card md:card-side bg-base-100 shadow-xl">
+          <figure><img src="<%= beer.image_url %>" alt="<%= beer.name %> image"/></figure>
+          <div class="card-body">
+            <h2 class="card-title text-3xl" id="titles"><%= beer.name %></h2>
+            <p class="italic"><%= beer.tagline %></p>
+            <p><span class="text-xl" id="titles">First Brewed:</span> <%= beer.first_brewed %></p>
+            <p><%= beer.description %></p>
+            <p><span class="text-xl" id="titles">Food pairings: </span><%= beer.food_pairing %></p>
+            <p><span class="text-xl" id="titles">Brewers Tips: </span><%= beer.brewers_tips %></p>
+          </div>
+        </div>
+        </div>
+  <% }); %>
   </div>
-</div>
-</div>
-<% }); %>
-</div>
 <% } else { %>
 <p>Sorry we failed to find a beer first brewed in that year.</p>
 <% } %>
