@@ -33,6 +33,10 @@
   #blue:hover {
 	background-color: #638889;
   }
+
+  #titles {
+	font-family: 'League Gothic', sans-serif;
+  }
   
   .bottle {
 	margin-bottom: 20px;
@@ -99,15 +103,21 @@
 	left: 50%;
 	width: 70%;
 	height: 70%;
-	background: white;
 	border-radius: 50%;
-	border: 5px solid forestgreen;
+	border: 5px solid #638889;
 	transform: translate(-50%, -50%);
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	font-size: 50px;
+	background: url('../static/pic/brewdoglogo.jpeg') no-repeat center center;
+	height: 80%;
+	width: 100%;
+	background-size: cover;
+	overflow: hidden;
   }
+
+
   
   .cap {
 	position: absolute;
