@@ -13,3 +13,5 @@ Site built using the Punk API, an API which houses all of the Brewdog Beer compa
 2. Type `nodemon index.js` in your code editor's terminal to run the application
 3. Open http://localhost:3000 in your web browser.
 
+### Punk API 
+All of the data in this project is taken from https://punkapi.com/ 
