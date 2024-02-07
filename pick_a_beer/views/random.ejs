@@ -1,6 +1,6 @@
 <%- include("partials/header.ejs") %>
 
-<h1 class="text-center text-2xl mt-8">Random Beer <i class="fa-solid fa-beer-mug-empty text-gold"></i></h1>
+<h1 class="text-center text-2xl mt-8" id="titles">Random Beer <i class="fa-solid fa-beer-mug-empty text-gold"></i></h1>
 <div class="flex justify-center items-center mt-8 flex-col relative">
 <% if (beers) { %>
 <% beers.forEach(beer => { %>

@@ -1,9 +1,9 @@
 <%- include("partials/header.ejs") %>
 
-<h1 class="text-center text-2xl mt-8">Beers by Year <i class="fa-solid fa-beer-mug-empty text-gold"></i></h1>
+<h1 class="text-center text-2xl mt-8" id="titles">Beers by Year <i class="fa-solid fa-beer-mug-empty text-gold"></i></h1>
 <div class="flex justify-center items-center mt-8 flex-col relative">
 <% if (foods) { %>
-    <h2>Results for Beers which go well with <%= food %></h2>
+    <h2 id="titles" class="text-2xl">Results for Beers which go well with "<%= food %>"</h2>
 <% foods.forEach(food => { %>
 <div class="lg:w-[50%] sm:w-[80%] md:w-[70%] border-solid mt-8 relative">
 <div class="card md:card-side bg-base-100 shadow-xl">

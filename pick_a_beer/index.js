@@ -35,7 +35,9 @@ app.post("/search-by-year", async (req, res) => {
     );
     const beerYears = response.data;
     console.log(beerYears);
-    res.render("beerYears.ejs", { beers: beerYears });
+    res.render("beerYears.ejs", { beers: beerYears,
+    year: year
+   });
   } catch (error) {
     console.error("Failed to make request:", error.message);
     res.status(500).send("Internal Server Error");
