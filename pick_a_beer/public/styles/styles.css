@@ -13,13 +13,17 @@
 	  var(--browns);
   }
   
-  * {
-	box-sizing: border-box;
-  }
-  
   body {
-	background: #F9EFDB;
+	background-color: #F9EFDB;
+	flex-direction: column;
+    min-height: 100%; /* Make the body take up the full height of the viewport */
+    margin: 0; /* Remove default margin */
   }
+
+#content {
+	flex: 1; /* Make the content section flex to fill remaining space */
+	min-height: 100%;
+} 
 
   #nav {
 	background: #EBD9B4;

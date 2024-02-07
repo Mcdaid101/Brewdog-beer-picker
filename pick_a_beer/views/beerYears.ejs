@@ -1,25 +1,24 @@
 <%- include("partials/header.ejs") %>
-<div>
-    <h1 class="text-center text-2xl mt-8">Beers by Year <i class="fa-solid fa-beer-mug-empty text-gold"></i></h1>
+
+<h1 class="text-center text-2xl mt-8">beer year <i class="fa-solid fa-beer-mug-empty text-gold"></i></h1>
 <div class="flex justify-center items-center mt-8 flex-col relative">
-    <% if (beers && beers.length > 0) { %>
-        <% beers.forEach(beer => { %>
-            <div class="lg:w-[50%] sm:w-[80%] md:w-[70%] border-solid mt-8 relative z-0">
-                <div class="card md:card-side bg-base-100 shadow-xl">
-                  <figure><img src="<%= beer.image_url %>" alt="<%= beer.name %> image"/></figure>
-                  <div class="card-body">
-                    <h2 class="card-title text-3xl" id="titles"><%= beer.name %></h2>
-                    <p class="italic"><%= beer.tagline %></p>
-                    <p><%= beer.description %></p>
-                    <p>Food pairings: <%= beer.food_pairing %></p>
-                    <p>Brewers Tips: <%= beer.brewers_tips %></p>
-                  </div>
-                </div>
-                </div>
-                <% }); %>
-                </div>
-    <% } else { %>
-            <p>Sorry we can't find any beers first brewed in this year</p>
-        <% } %>
+<% if (beers) { %>
+<% beers.forEach(beer => { %>
+<div class="lg:w-[50%] sm:w-[80%] md:w-[70%] border-solid mt-8 relative">
+<div class="card md:card-side bg-base-100 shadow-xl">
+  <figure><img src="<%= beer.image_url %>" alt="<%= beer.name %> image"/></figure>
+  <div class="card-body">
+    <h2 class="card-title text-3xl" id="titles"><%= beer.name %></h2>
+    <p class="italic"><%= beer.tagline %></p>
+    <p><%= beer.description %></p>
+    <p>Food pairings: <%= beer.food_pairing %></p>
+    <p>Brewers Tips: <%= beer.brewers_tips %></p>
+  </div>
 </div>
+</div>
+<% }); %>
+</div>
+<% } else { %>
+<p>Failed to load a random beer</p>
+<% } %>
 <%- include("partials/footer.ejs") %>
