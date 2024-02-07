@@ -37,6 +37,10 @@
   #titles {
 	font-family: 'League Gothic', sans-serif;
   }
+
+  h1 i {
+	color: #638889;
+  }
   
   .bottle {
 	margin-bottom: 20px;

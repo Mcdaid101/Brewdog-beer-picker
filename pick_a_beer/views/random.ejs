@@ -1,26 +1,23 @@
 <%- include("partials/header.ejs") %>
 
-<h1>Random Beer</h1>
+<h1 class="text-center text-2xl mt-8">Random Beer <i class="fa-solid fa-beer-mug-empty text-gold"></i></h1>
+<div class="flex justify-center items-center mt-8 flex-col relative">
 <% if (beers) { %>
 <% beers.forEach(beer => { %>
-
-  <p><%= beer.name %></p>
-
-  <p class="italic"><%= beer.tagline %></p>
-
-  <p>First Brewed: <%= beer.first_brewed %></p>
-
-  <p><%= beer.description %></p>
-
-<div class="h-20 w-20">
-  <img src="<%= beer.image_url %>" alt="<%= beer.name %> image">
+<div class="lg:w-[50%] sm:w-[80%] md:w-[70%] border-solid mt-8 relative z-0">
+<div class="card md:card-side bg-base-100 shadow-xl">
+  <figure><img src="<%= beer.image_url %>" alt="<%= beer.name %> image"/></figure>
+  <div class="card-body">
+    <h2 class="card-title text-3xl" id="titles"><%= beer.name %></h2>
+    <p class="italic"><%= beer.tagline %></p>
+    <p><%= beer.description %></p>
+    <p>Food pairings: <%= beer.food_pairing %></p>
+    <p>Brewers Tips: <%= beer.brewers_tips %></p>
+  </div>
 </div>
-
-<p>Food pairings: <%= beer.food_pairing %></p>
-
-<p>Brewers Tips: <%= beer.brewers_tips %></p>
-
+</div>
 <% }); %>
+</div>
 <% } else { %>
 <p>Failed to load a random beer</p>
 <% } %>
