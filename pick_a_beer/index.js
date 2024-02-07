@@ -52,7 +52,9 @@ app.post("/search-by-food", async (req, res) => {
     );
     const matchingFoods = response.data;
     console.log(matchingFoods);
-    res.render("food.ejs", { foods: matchingFoods });
+    res.render("food.ejs", { foods: matchingFoods,
+      food: food
+     });
   } catch (error) {
     console.error("Failed to make request:", error.message);
     res.status(500).send("Internal Server Error");
