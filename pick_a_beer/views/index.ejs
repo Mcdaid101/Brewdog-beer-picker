@@ -1,69 +1,64 @@
 <%- include("partials/header.ejs") %>
-<div id="glass">
-  <div id="beer"></div>
-</div>
-<div id="poignet"></div>
-<div id="mousse_1"></div>
-<div id="mousse_2"></div>
-<div id="mousse_3"></div>
-<div id="mousse_4"></div>
-<div id="mousse_5"></div>
-<div id="mousse_volante"></div>
-<div id="mousse_interieur"></div>
-<div id="mousse_interieur_2"></div>
-<div id="mousse_interieur_3"></div>
-<div id="mousse_interieur_4"></div>
+<!-- Main div -->
+<div class="flex justify-center items-center mt-8 flex-col relative">
 
-<div class="flex justify-center items-center w-full mt-8">
-  <div class="lg:w-[50%] sm:w-[80%] md:w-[70%] bg-blue-500">
   <!-- Search for beer by name -->
-  <div class="lg:w-[50%] sm:w-[80%] md:w-[70%] border-solid bg-yellow-600 mt-8">
+  <div class="lg:w-[50%] sm:w-[80%] md:w-[70%] border-solid mt-8 relative z-0">
     <form action="/search-by-name" id="name" method="POST">
-      <input type="text" placeholder="Search beers by name" name="search" value="" class="input input-bordered w-full max-w-xs">
-      <button type="submit">Search</button>
-  </form>
-  </div>
-
-  <!-- Search for food pairing -->
-  <div class="lg:w-[50%] sm:w-[80%] md:w-[70%] border-solid bg-yellow-600 mt-8">
-    <form action="/search-by-food" id="food-form" method="POST">
-      <input type="text" placeholder="Search Food Pairings" name="search" value="" class="input input-bordered w-full max-w-xs">
-      <button type="submit">Search</button>
+      <input type="text" placeholder="Search beers by name" name="search" value="" class="input input-bordered w-200px max-w-xs">
+      <button type="submit" id="blue"  class="btn btn-outline">Search</button>
     </form>
   </div>
 
-  <!--year search for beers-->
-    <form action="/search-by-year" id="year-form" class="form" method="POST">
-        <select name="year" class="form-select overflow-auto">
-          <option value="" data-display="Select">Year</option>
-          <option value="2008">2008</option>
-          <option value="2009">2009</option>
-          <option value="2010">2010</option>
-          <option value="2011">2011</option>
-          <option value="2012">2012</option>
-          <option value="2013">2013</option>
-          <option value="2014">2014</option>
-          <option value="2015">2015</option>
-          <option value="2016">2016</option>
-          <option value="2017">2017</option>
-          <option value="2018">2018</option>
-          <option value="2019">2019</option>
-          <option value="2020">2020</option>
-          <option value="2021">2021</option>
-          <option value="2022">2022</option>
-          <option value="2023">2023</option>
-          <option value="2024">2024</option>
-        </select>
-        <button type="submit">Search</button>
-      </form>
+  <!-- Search for food pairing -->
+  <div class="lg:w-[50%] sm:w-[80%] md:w-[70%] border-solid mt-8 relative z-0">
+    <form action="/search-by-food" id="food-form" method="POST">
+      <input type="text" placeholder="Search Food Pairings" name="search" value="" class="input input-bordered w-200px max-w-xs">
+      <button type="submit" class="btn btn-outline" id="blue" >Search</button>
+    </form>
+  </div>
 
-      <!--Random beer button -->
-        <div class="lg:w-[50%] sm:w-[80%] md:w-[70%] border-solid mt-10">
-          <button class="btn btn-outline">
-            <a href="/random">Random Beer</a>
-          </button>
-        </div>
+  <!-- Year search for beers -->
+<div class="lg:w-[50%] sm:w-[80%] md:w-[70%] border-solid mt-8 relative z-0">
+  <form action="/search-by-year" id="year-form" class="form" method="POST">
+    <select name="year" class="select select-bordered w-200px w-full max-w-xs">
+      <option disabled selected data-display="Select" >Search beers by year</option>
+      <option value="2008">2008</option>
+      <option value="2009">2009</option>
+      <option value="2010">2010</option>
+      <option value="2011">2011</option>
+      <option value="2012">2012</option>
+      <option value="2013">2013</option>
+      <option value="2014">2014</option>
+      <option value="2015">2015</option>
+      <option value="2016">2016</option>
+      <option value="2017">2017</option>
+      <option value="2018">2018</option>
+      <option value="2019">2019</option>
+      <option value="2020">2020</option>
+      <option value="2021">2021</option>
+      <option value="2022">2022</option>
+      <option value="2023">2023</option>
+      <option value="2024">2024</option>
+    </select>
+    <button type="submit" class="btn btn-outline" id="blue" >Search</button>
+  </form>
+</div>
 
+  <!-- Random beer button -->
+  <div class="lg:w-[50%] sm:w-[80%] md:w-[70%] border-solid mt-10">
+    <button id="blue" class="btn btn-outline">
+      <a href="/random">Random Beer</a>
+    </button>
+  </div>
+</div>
+
+<div class="bottle">
+  <div class="neck">
+    <div class="cap"></div>
+  </div>
+  <div class="label">
+     <img src="../public/static/pic/Brewdog Beer.png ">
   </div>
 </div>
 <%- include("partials/footer.ejs") %>

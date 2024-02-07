@@ -2,476 +2,146 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+/* beer animation */
 
-#beer_text {
-	font-family: 'futura';
-	color: white;
-	letter-spacing: 20px;
-	font-size: 30px;
+:root {
+	--shade: rgba(0, 0, 0, 0.2);
+	--browns: linear-gradient(to right, saddlebrown, peru, saddlebrown);
+	--bg: linear-gradient(to bottom, var(--shade), transparent, var(--shade)),
+	  var(--browns);
+	--shade-bg: linear-gradient(to bottom, var(--shade), var(--shade)),
+	  var(--browns);
+  }
+  
+  * {
+	box-sizing: border-box;
+  }
+  
+  body {
+	background: #F9EFDB;
+  }
+
+  #nav {
+	background: #EBD9B4;
+	padding-top: 10px;
+  }
+
+  #blue {
+	background: #9DBC98;
+  }
+
+  #blue:hover {
+	background-color: #638889;
+  }
+  
+  .bottle {
+	margin-bottom: 20px;
+	margin-left: 300px;
 	position: absolute;
-	top: 195px;
-	left: 370px;
-}
-
-#dribbble {
-	color: #EC4E8B;
-}
-
-#hetic {
-	color: #6FB400;
-}
-
-#text {
+	top: 50%;
+	left: 50%;
+	width: 120px;
+	height: 200px;
+	background: var(--bg);
+	transform: translate(-50%, -50%);
+  }
+  
+  .bottle::before {
+	content: "";
 	position: absolute;
-	top: 335px;
-	left: 150px;
-	font-family: "futura std";
-	color: white;
-}
-
-a {
-	text-decoration: none;
-}
-
-#body {
-	background: #201F1E;
-}
-
-#glass {
-	width: 70px;
-	height: 90px;
-	background: transparent;
-	border: solid 3.5px white;
-	border-top: none;
-	border-radius: 0 0 10px 10px;
+	left: 0;
+	bottom: 100%;
+	width: 100%;
+	height: 30px;
+	background: var(--shade-bg);
+	border-top-left-radius: 40px 80%;
+	border-top-right-radius: 40px 80%;
+  }
+  
+  .bottle::after {
+	content: "";
 	position: absolute;
-	top: 200px;
-	left: 200px;
-	overflow: hidden;
-	transform: rotate(-20deg);
-	-webkit-animation: glass 10s infinite;
-}
-	
-#poignet {
-		width: 30px;
-		height: 55px;
-		background: transparent;
-		border: solid 3.5px white;
-		position: absolute;
-		top: 192px;
-		left: 270px;
-		border-radius: 0 16px 16px 0;
-		border-left: none;
-		transform: rotate(-20deg);
-	-webkit-animation: poignet 10s infinite;
-}
-
-#beer {
-	width: 58px;
-	height: 84px;
-	background: transparent;
+	left: 0;
+	top: 100%;
+	width: 100%;
+	height: 10px;
+	background: var(--shade-bg);
+	border-bottom-left-radius: 50%;
+	border-bottom-right-radius: 50%;
+  }
+  
+  .neck {
 	position: absolute;
-	left: 6px;
-	top: 0px;
-	border-radius: 0 0 5px 5px;
-	overflow: hidden;
-	
-	&::before {
-		content: "";
-		width: 250px;
-		height: 250px;
-		background: #E8B504;
-		position: absolute;
-		top: 83px;
-		left: -190px;
-		transform: rotate(40deg);
-		-webkit-animation: beer 10s infinite;
-	}
-}
-
-#mousse_1 {
+	left: 50%;
+	bottom: calc(100% + 28px);
+	width: 60px;
+	height: 80px;
+	background: var(--bg);
+	transform: translateX(-50%);
+	border-top-left-radius: 10% 100%;
+	border-top-right-radius: 10% 100%;
+  }
+  
+  .neck::before {
+	content: "";
 	position: absolute;
-	top: 192px;
-	left: 198px;
-	z-index: 4;
-	
-	&::before {
-		content: "";
-		width: 20px;
-		height: 20px;
-		background: white;
-		border-radius: 50%;
-		position: absolute;
-		-webkit-animation: mousse 10s infinite;
-	}
-	
-	&::after {
-		content: "";
-		width: 17px;
-		height: 17px;
-		background: white;
-		border-radius: 50%;
-		position: absolute;
-		top: 5px;
-		left: 10px;
-		-webkit-animation: mousse 10s infinite;
-	}
-}
-
-#mousse_2 {
+	bottom: 100%;
+	left: 0;
+	width: 100%;
+	height: 10px;
+	background: var(--bg);
+	border-radius: 1000px;
+  }
+  
+  .label {
 	position: absolute;
-	top: 192px;
-	left: 212px;
-	z-index: 4;
-	
-	&::before {
-		content: "";
-		width: 20px;
-		height: 20px;
-		background: white;
-		border-radius: 50%;
-		position: absolute;
-		-webkit-animation: mousse 10s infinite;
-	}
-	
-	&::after {
-		content: "";
-		width: 17px;
-		height: 17px;
-		background: white;
-		border-radius: 50%;
-		position: absolute;
-		top: -5px;
-		left: 10px;
-		-webkit-animation: mousse 10s infinite;
-	}
-}
-
-#mousse_3 {
+	top: 50%;
+	left: 50%;
+	width: 70%;
+	height: 70%;
+	background: white;
+	border-radius: 50%;
+	border: 5px solid forestgreen;
+	transform: translate(-50%, -50%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 50px;
+  }
+  
+  .cap {
 	position: absolute;
-	top: 192px;
-	left: 228px;
-	z-index: 4;
-	
-	&::before {
-		content: "";
-		width: 20px;
-		height: 20px;
-		background: white;
-		border-radius: 50%;
-		position: absolute;
-		-webkit-animation: mousse 10s infinite;
-	}
-	
-	&::after {
-		content: "";
-		width: 17px;
-		height: 17px;
-		background: white;
-		border-radius: 50%;
-		position: absolute;
-		top: 10px;
-		left: 15px;
-		-webkit-animation: mousse 10s infinite;
-	}
-}
-
-#mousse_4 {
-	position: absolute;
-	top: 192px;
-	left: 242px;
-	z-index: 4;
-	
-	&::before {
-		content: "";
-		width: 20px;
-		height: 20px;
-		background: white;
-		border-radius: 50%;
-		position: absolute;
-		-webkit-animation: mousse 10s infinite;
-	}
-	
-	&::after {
-		content: "";
-		width: 17px;
-		height: 17px;
-		background: white;
-		border-radius: 50%;
-		position: absolute;
-		top: 5px;
-		left: 10px;
-		-webkit-animation: mousse 10s infinite;
-	}
-}
-
-#mousse_5 {
-	position: absolute;
-	top: 192px;
-	left: 257px;
-	z-index: 4;
-	-webkit-animation: mousse 10s infinite;
-	
-	&::before {
-		content: "";
-		width: 20px;
-		height: 20px;
-		background: white;
-		border-radius: 50%;
-		position: absolute;
-	}
-	
-}
-
-#mousse_volante {
-	position: absolute;
-	top: 185px;
-	left: 212px;
-	z-index: 4;
-	
-	&::before {
-		content: "";
-		width: 12px;
-		height: 12px;
-		background: white;
-		border-radius: 50%;
-		position: absolute;
-		-webkit-animation: mousse_volante 10s infinite;
-	}
-	
-	&::after {
-		content: "";
-		width: 8px;
-		height: 8px;
-		background: white;
-		border-radius: 50%;
-		position: absolute;
-		top: 15px;
-		left: 40px;
-		-webkit-animation: mousse_volante 10s infinite;
-	}
-}
-
-#mousse_interieur {
-	position: absolute;
-	top: 255px;
-	left: 218px;
-	z-index: 4;
-	opacity: 0.9;
-	
-	&::before {
-		content: "";
-		width: 6px;
-		height: 6px;
-		background: white;
-		border-radius: 50%;
-		position: absolute;
-		-webkit-animation: mousse_interieur 10s infinite;
-	}
-	
-	&::after {
-		content: "";
-		width: 4px;
-		height: 4px;
-		background: white;
-		border-radius: 50%;
-		position: absolute;
-		top: 15px;
-		left: 30px;
-		-webkit-animation: mousse_interieur 5s infinite;
-	}
-}
-
-#mousse_interieur_2 {
-	position: absolute;
-	top: 235px;
-	left: 225px;
-	z-index: 4;
-	opacity: 0.9;
-	
-	&::before {
-		content: "";
-		width: 7px;
-		height: 7px;
-		background: white;
-		border-radius: 50%;
-		position: absolute;
-		-webkit-animation: mousse_interieur 10s infinite;
-	}
-	
-	&::after {
-		content: "";
-		width: 3px;
-		height: 3px;
-		background: white;
-		border-radius: 50%;
-		position: absolute;
-		top: 5px;
-		left: 17px;
-		-webkit-animation: mousse_interieur 5s infinite;
-	}
-}
-
-#mousse_interieur_3 {
-	position: absolute;
-	top: 245px;
-	left: 232px;
-	z-index: 4;
-	opacity: 0.9;
-	
-	&::before {
-		content: "";
-		width: 9px;
-		height: 9px;
-		background: white;
-		border-radius: 50%;
-		position: absolute;
-		-webkit-animation: mousse_interieur 10s infinite;
-	}
-	
-	&::after {
-		content: "";
-		width: 5px;
-		height: 5px;
-		background: white;
-		border-radius: 50%;
-		position: absolute;
-		top: 8px;
-		left: 12px;
-		-webkit-animation: mousse_interieur 5s infinite;
-	}
-}
-
-#mousse_interieur_4 {
-	position: absolute;
-	top: 241px;
-	left: 238px;
-	z-index: 4;
-	opacity: 0.9;
-	
-	&::before {
-		content: "";
-		width: 2px;
-		height: 2px;
-		background: white;
-		border-radius: 50%;
-		position: absolute;
-		-webkit-animation: mousse_interieur 10s infinite;
-	}
-	
-	&::after {
-		content: "";
-		width: 5.5px;
-		height: 5.5px;
-		background: white;
-		border-radius: 50%;
-		position: absolute;
-		top: 28px;
-		left: 2px;
-		-webkit-animation: mousse_interieur 5s infinite;
-	}
-}
-
-/* ANIMATIONS */
-
-@-webkit-keyframes beer {
+	bottom: 100%;
+	left: 0;
+	width: 100%;
+	height: 10px;
+	background: linear-gradient(to bottom, gold, goldenrod);
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	border-bottom: 2px dashed goldenrod;
+	animation: flip 3s linear;
+  }
+  
+  @keyframes flip {
 	0% {
-		transform: translateY(-5);
+	  transform: translate(0, 0) rotate(0);
 	}
-	17% {
-		transform: translateY(-82px);	
-	}
-	100% {
-		transform: translateY(-82px);
-	}
-}
-
-@-webkit-keyframes glass {
-	0% {
-		transform: rotate(-20deg);
-	}
-	
-	17% {
-		transform: rotate(0deg);
-	}
-	
-	100% {
-		transform: rotate(0deg);
-	}
-}
-
-
-@-webkit-keyframes poignet {
-	0% {
-		transform: rotate(-20deg);
-	}
-	17% {
-		transform: rotate(0deg) translateX(5px) translateY(20px);
-	}
-	
-	100% {
-		transform: rotate(0deg) translateX(5px) translateY(20px);
-	}	
-}
-
-@-webkit-keyframes mousse {
-	0% {
-		transform: scale(0);
-	}
-	10% {
-		transform: scale(0);
-	}
+  
 	20% {
-		transform: scale(1);
+	  transform: translate(50px, -100px) rotate(180deg);
 	}
-}
-
-@-webkit-keyframes mousse_volante {
-	0% {
-		transform: scale(0)
-			translateY(0px);
+  
+	30% {
+	  transform: translate(100px, -150px) rotate(360deg);
 	}
-	10% {
-		transform: scale(0)
-			translateY(0px);
-	}
-	20% {
-		transform: scale(1) translateY(-20px);
-	}
-	
+  
 	40% {
-		opacity: 0;
+	  transform: translate(150px, -100px) rotate(540deg);
 	}
-	
+  
+	80%,
 	100% {
-		transform: scale(1) translateY(-80px);
-		opacity: 0;
+	  transform: translate(300px, 300px) rotate(1620deg);
 	}
-}
-
-@-webkit-keyframes mousse_interieur {
-	0% {
-		transform: scale(0)
-			translateY(0px);
-	}
-	20% {
-		transform: scale(0)
-			translateY(0px);
-	}
-	40% {
-		transform: scale(1) translateY(-60px);
-	}
-	
-	50% {
-		opacity: 0;
-	}
-	
-	100% {
-		transform: scale(1) translateY(-60px);
-		opacity: 0;
-	}
-}
-
-
-
-
+  }
+  
